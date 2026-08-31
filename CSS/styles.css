@@ -1,0 +1,53 @@
+/* VARIABLES GLOBALES Y PALETA OFICIAL */
+:root {
+    --reach-navy: #092F67;
+    --reach-orange: #E67A22;
+    --reach-teal: #147E8B;
+    --reach-gold: #E0A526;
+    --bg-warm: #FAF6EF;
+    
+    --font-display: 'Cinzel', 'Times New Roman', serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-accent: 'Lora', Georgia, serif;
+}
+
+body {
+    font-family: var(--font-body);
+    color: #111827;
+    background-color: #FFFFFF;
+    padding-top: 76px; /* Para desfasar el navbar fijo */
+}
+
+/* NAVBAR CUSTOM */
+.custom-navbar {
+    background-color: var(--reach-navy);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.brand-title {
+    font-family: var(--font-display);
+    color: #FFFFFF !important;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.custom-navbar .nav-link {
+    color: #FFFFFF !important;
+    font-weight: 500;
+    margin: 0 8px;
+}
+
+.btn-reach-orange {
+    background-color: var(--reach-orange);
+    color: #FFFFFF;
+    font-weight: 600;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+.btn-reach-orange:hover {
+    background-color: #C56411;
+    color: #FFFFFF;
+}
