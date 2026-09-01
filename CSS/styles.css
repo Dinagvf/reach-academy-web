@@ -51,3 +51,67 @@ body {
     background-color: #C56411;
     color: #FFFFFF;
 }
+/* Contenedor principal con la imagen de fondo */
+.hero-section {
+    position: relative;
+    min-height: 85vh; /* Ocupa el 85% de la altura de la pantalla */
+    background: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1920') no-repeat center center/cover;
+    padding: 60px 0;
+}
+
+/* Capa azul translúcida para que resalte el texto */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(9, 47, 103, 0.82); /* Navy oficial (#092F67) con opacidad */
+    z-index: 0;
+}
+
+/* Estilos del Título Principal */
+.hero-title {
+    font-family: var(--font-display); /* Aplica la fuente Cinzel */
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* Estilos del Subtítulo */
+.hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.95;
+}
+
+/* Caja de la barra flotante estilo UVA */
+.hero-search-bar {
+    background-color: rgba(6, 26, 58, 0.9); /* Azul marino muy oscuro */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px); /* Efecto de cristal esmerilado */
+}
+
+/* Textos pequeños sobre los selectores */
+.text-lightSmall {
+    font-size: 0.85rem;
+    color: #DCE8F8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Selectores desplegables personalizados */
+.custom-select {
+    background-color: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    color: #111827;
+    font-weight: 500;
+}
+
+.custom-select:focus {
+    border-color: var(--reach-orange);
+    box-shadow: 0 0 0 0.25rem rgba(230, 122, 34, 0.25);
+}
