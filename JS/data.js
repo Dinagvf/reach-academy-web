@@ -95,3 +95,65 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+// LÓGICA PARA ENVIAR FORMULARIO A WHATSAPP (COMPLETO)
+document.addEventListener("DOMContentLoaded", () => {
+    // Renderizado inicial del catálogo
+    renderCourses("examenes");
+
+    // Eventos de pestañas...
+    const tabButtons = document.querySelectorAll("#programTabs button");
+    tabButtons.forEach(button => {
+        button.addEventListener("click", (e) => {
+            tabButtons.forEach(btn => btn.classList.remove("active"));
+            e.target.classList.add("active");
+            const selectedCategory = e.target.getAttribute("data-category");
+            renderCourses(selectedCategory);
+        });
+    });
+
+    // CAPTURA DEL FORMULARIO DE WHATSAPP
+    const whatsappForm = document.getElementById("whatsappForm");
+
+    if (whatsappForm) {
+        whatsappForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            // Número oficial de Reach Academy (Formato internacional sin + ni espacios)
+            const phoneNumber = "584121369189"; 
+
+            // Obtener valores de los campos
+            const nombreSolicitante = document.getElementById("nombreContacto").value.trim();
+            const rol = document.getElementById("rolContacto").value;
+            const nombreEstudianteInput = document.getElementById("nombreEstudiante").value.trim();
+            const edad = document.getElementById("edadEstudiante").value.trim();
+            const anoGraduacion = document.getElementById("anoBachillerato").value;
+            const programa = document.getElementById("programaContacto").value;
+            const mensajeAdicional = document.getElementById("mensajeContacto").value.trim();
+
+            // Si no llena el nombre del estudiante, asumimos que es el mismo solicitante
+            const nombreEstudiante = nombreEstudianteInput !== "" ? nombreEstudianteInput : nombreSolicitante;
+
+            // Construir el mensaje formateado para WhatsApp
+            let textMessage = `¡Hola Reach Academy! 👋\n\n`;
+            textMessage += `Solicitud de Información / Prueba de Nivelación:\n`;
+            textMessage += `• *Solicitante:* ${nombreSolicitante} (${rol})\n`;
+            textMessage += `• *Estudiante:* ${nombreEstudiante}\n`;
+            textMessage += `• *Edad:* ${edad} años\n`;
+            textMessage += `• *Nivel escolar:* ${anoGraduacion}\n`;
+            textMessage += `• *Programa de interés:* ${programa}\n`;
+
+            if (mensajeAdicional !== "") {
+                textMessage += `\n*Consulta adicional:* ${mensajeAdicional}`;
+            }
+
+            // Codificar texto a URL
+            const encodedMessage = encodeURIComponent(textMessage);
+
+            // Enlace directo usando la API oficial
+            const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+
+            // Abrir en nueva pestaña
+            window.open(whatsappURL, "_blank");
+        });
+    }
+});
