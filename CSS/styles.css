@@ -201,13 +201,13 @@ body {
 }
 /* Ajuste de tamaño para los logos */
 .nav-logo {
-    height: 100px; /* Ajusta este valor según la proporción de tu logo */
+    height: 40px; /* Ajusta este valor según la proporción de tu logo */
     width: auto;
     object-fit: contain;
 }
 
 .footer-logo {
-    height: 60px;
+    height: 45px;
     width: auto;
     object-fit: contain;
 }
