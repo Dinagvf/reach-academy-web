@@ -199,11 +199,23 @@ body {
     background-color: var(--reach-navy);
     color: #FFFFFF;
 }
-/* Ajuste de tamaño para los logos */
+/* Tamaño del logo en la barra de navegación */
 .nav-logo {
-    height: 40px; /* Ajusta este valor según la proporción de tu logo */
+    height: 65px; /* Sube la altura para que destaque bastante */
     width: auto;
     object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+/* Espaciado de la barra para acomodar un logo más grande */
+.custom-navbar {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    background-color: rgba(9, 47, 103, 0.85) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
 }
 
 .footer-logo {
