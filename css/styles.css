@@ -1,0 +1,223 @@
+/* VARIABLES GLOBALES Y PALETA OFICIAL */
+:root {
+    --reach-navy: #092F67;
+    --reach-orange: #E67A22;
+    --reach-teal: #147E8B;
+    --reach-gold: #E0A526;
+    --bg-warm: #FAF6EF;
+    
+    --font-display: 'Cinzel', 'Times New Roman', serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-accent: 'Lora', Georgia, serif;
+}
+
+body {
+    font-family: var(--font-body);
+    color: #111827;
+    background-color: #FFFFFF;
+    padding-top: 76px; /* Para desfasar el navbar fijo */
+}
+
+/* NAVBAR CUSTOM */
+.custom-navbar {
+    background-color: rgba(9, 47, 103, 0.75) !important; /* Azul marino oficial con 85% de opacidad */
+    backdrop-filter: blur(10px); /* Aplica el desenfoque de fondo tipo cristal */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidad con Safari */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Sutil línea divisoria */
+    transition: all 0.3s ease;
+}
+
+.brand-title {
+    font-family: var(--font-display);
+    color: #FFFFFF !important;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.custom-navbar .nav-link {
+    color: #FFFFFF !important;
+    font-weight: 500;
+    margin: 0 8px;
+}
+
+.btn-reach-orange {
+    background-color: var(--reach-orange);
+    color: #FFFFFF;
+    font-weight: 600;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+.btn-reach-orange:hover {
+    background-color: #C56411;
+    color: #FFFFFF;
+}
+/* Contenedor principal con la imagen de fondo */
+.hero-section {
+    position: relative;
+    min-height: 85vh; /* Ocupa el 85% de la altura de la pantalla */
+    background: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1920') no-repeat center center/cover;
+    padding: 60px 0;
+}
+
+/* Capa azul translúcida para que resalte el texto */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(9, 47, 103, 0.82); /* Navy oficial (#092F67) con opacidad */
+    z-index: 0;
+}
+
+/* Estilos del Título Principal */
+.hero-title {
+    font-family: var(--font-display); /* Aplica la fuente Cinzel */
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* Estilos del Subtítulo */
+.hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.95;
+}
+
+/* Caja de la barra flotante estilo UVA */
+.hero-search-bar {
+    background-color: rgba(6, 26, 58, 0.9); /* Azul marino muy oscuro */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px); /* Efecto de cristal esmerilado */
+}
+
+/* Textos pequeños sobre los selectores */
+.text-lightSmall {
+    font-size: 0.85rem;
+    color: #DCE8F8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Selectores desplegables personalizados */
+.custom-select {
+    background-color: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    color: #111827;
+    font-weight: 500;
+}
+
+.custom-select:focus {
+    border-color: var(--reach-orange);
+    box-shadow: 0 0 0 0.25rem rgba(230, 122, 34, 0.25);
+}
+/*ESTILOS PARA SECCION DE PROGRAMAS Y CURSOS*/
+.section-title {
+    font-family: var(--font-display);
+    color: var(--reach-navy);
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+
+.section-subtitle {
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Custom Pills / Tabs */
+.custom-tabs {
+    background-color: #E2E8F0;
+    padding: 6px;
+    border-radius: 50px;
+    gap: 4px;
+}
+
+.custom-tabs .nav-link {
+    color: #475569;
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 10px 22px;
+    transition: all 0.3s ease;
+}
+
+.custom-tabs .nav-link.active {
+    background-color: var(--reach-navy);
+    color: #FFFFFF;
+    box-shadow: 0 4px 10px rgba(9, 47, 103, 0.25);
+}
+
+/* Tarjetas de Curso (Course Cards) */
+.course-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.course-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Badges / Etiquetas */
+.badge-live {
+    background-color: #E8F5E9;
+    color: var(--reach-teal);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.badge-popular {
+    background-color: var(--reach-navy);
+    color: var(--reach-gold);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.btn-outline-reach {
+    border: 2px solid var(--reach-navy);
+    color: var(--reach-navy);
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-reach:hover {
+    background-color: var(--reach-navy);
+    color: #FFFFFF;
+}
+/* Ajuste de tamaño para los logos */
+.nav-logo {
+    height: 40px; /* Ajusta este valor según la proporción de tu logo */
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-logo {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+/* Mejoras de contraste en el Footer */
+footer p.text-muted, 
+footer .text-muted {
+    color: #CBD5E1 !important; /* Gris claro/azulado de alto contraste */
+    font-size: 0.9rem;
+}
+
+footer p {
+    color: #FFFFFF;
+}
