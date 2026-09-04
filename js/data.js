@@ -3,50 +3,101 @@ const coursesData = [
     {
         id: 1,
         category: "examenes",
-        title: "TOEFL iBT Prep",
-        modality: "Clases En Vivo / Presencial",
-        description: "Estrategias específicas, prácticas de Speaking y Writing, y simulacros reales para alcanzar tu puntaje objetivo."
+        title: "TOEFL iBT",
+        modality: "PARA ADMISIÓN Y BECAS EN EL EXTERIOR",
+        description: "¿La universidad o beca que quieres te exige un puntaje mínimo de inglés? Te preparamos con estrategia, práctica de Speaking y Writing y simulacros reales hasta que lo alcances."
     },
     {
         id: 2,
         category: "examenes",
-        title: "Digital SAT Mastery",
-        modality: "Clases En Vivo",
-        description: "Preparación intensiva en Math y Reading & Writing enfocada en la nueva estructura del examen digital."
+        title: "Digital SAT",
+        modality: "PARA APLICAR A UNIVERSIDADES EN EE.UU.",
+        description: "El puntaje que las universidades estadounidenses miran de cerca. Preparación intensiva en Math y en Reading & Writing, enfocada en la nueva estructura digital del examen."
     },
     {
         id: 3,
         category: "examenes",
         title: "Duolingo English Test (DET)",
-        modality: "Entrenamiento Rápido",
-        description: "Dominio del formato del examen, tips para subpuntajes y práctica intensiva con retroalimentación inmediata."
+        modality: "LA OPCIÓN MÁS RÁPIDA Y ECONÓMICA",
+        description: "Cada vez más universidades lo aceptan, y se hace en línea — más rápido y económico que otros exámenes. Trabajamos el formato, los subpuntajes y la práctica con retroalimentación inmediata."
     },
     {
         id: 4,
         category: "idiomas",
-        title: "Inglés Académico e Internacional",
-        modality: "Todos los Niveles",
-        description: "Desarrollo de fluidez, vocabulario avanzado y estructura gramatical para entornos académicos y profesionales."
+        title: "Inglés General",
+        modality: "PARA DOMINAR EL IDIOMA A TU RITMO",
+        description: "Desde cero o desde donde estés, hasta hablar con confianza. Un plan armado a tu nivel, con clases que avanzan cuando tú avanzas — sin apurar temas que aún no dominas."
     },
     {
         id: 5,
-        category: "stem",
-        title: "Tutorías STEM & Bachillerato",
-        modality: "Acompañamiento Personalizado",
-        description: "Refuerzo y nivelación intensiva en Matemáticas, Física y Química para estudiantes de bachillerato."
+        category: "idiomas",
+        title: "Inglés Académico",
+        modality: "SI SABES QUE PRESENTARÁS TOEFL O DUOLINGO",
+        description: "¿Ya tienes una meta internacional en la mira? Construimos tu inglés con el examen como norte desde el primer día, para que llegues a la preparación final con una base sólida."
     },
     {
         id: 6,
+        category: "idiomas",
+        title: "Francés",
+        modality: "PARA TUS PLANES EN EUROPA",
+        description: "¿Piensas estudiar, trabajar o mudarte a Europa? Estamos forming grupos de francés desde nivel principiante. Escríbenos y te avisamos apenas abra el próximo."
+    },
+    {
+        id: 7,
+        category: "stem",
+        title: "Materias de Bachillerato",
+        modality: "PARA IR AL DÍA Y MEJORAR TU NOTAS",
+        description: "Matemática, física, química e inglés, al ritmo de tu colegio. ¿Tienes un examen o una entrega cerca? Pausamos el plan y te ayudamos a prepararla — porque no basta con entender la materia, hay que irte bien en clase."
+    },
+    {
+        id: 8,
+        category: "stem",
+        title: "Nivelación Internacional",
+        modality: "SI TU META ES ESTUDIAR FUERA DE VENEZUELA",
+        description: "El pénsum venezolano en matemática, física y química deja vacíos frente a lo que se estudia en otros países y en exámenes como el SAT. Los identificamos y los cerramos con el mismo contenido que se aprende afuera, para que nada te tome por sorpresa."
+    },
+    {
+        id: 9,
+        category: "stem",
+        title: "Introducción a Economía y Negocios",
+        modality: "PARA FUTUROS ESTUDIANTES DE NEGOCIOS, FINANZAS O ECONOMÍA",
+        description: "¿Piensas estudiar administración, economía o finanzas? Adelántate con los fundamentos que el colegio casi no toca, de la mano de una fundadora con título en Business y Economics y un máster en Finanzas."
+    },
+    {
+        id: 10,
         category: "admisiones",
-        title: "Asesoría de Admisión Universitaria USA",
-        modality: "Orientación 1-a-1",
-        description: "Guía paso a paso en el proceso de postulación, preparación de ensayos y requisitos para universidades en EE. UU."
+        title: "Asesoría de Admisión Académica",
+        modality: "PARA UNIVERSIDADES EN EE.UU. Y EUROPA",
+        description: "Te guiamos paso a paso: selección de universidades, ensayos, requisitos, plazos y documentación. Convertimos un proceso que parece imposible desde Venezuela en pasos claros — ya sea que tu meta esté en Estados Unidos o en Europa."
+    },
+    {
+        id: 11,
+        category: "admisiones",
+        title: "Asesoría de Admisión Deportiva",
+        modality: "PARA ESTUDIANTES-ATLETAS",
+        description: "Si practicas un deporte a buen nivel, puede ser tu vía de entrada a una universidad en el exterior. Te orienta alguien que vivió el proceso desde adentro: entré a una universidad de EE.UU. como estudiante-atleta y jugué en su equipo. Sé cómo funciona el sistema, qué buscan los entrenadores y cómo prepararte."
+    },
+    {
+        id: 12,
+        category: "admisiones",
+        title: "Test Vocacional (con TES)",
+        modality: "SI AÚN NO SABES QUÉ ESTUDIAR",
+        description: "Antes de elegir universidad, hay que elegir carrera. A través de nuestra alianza con TES, aplicamos un test de aptitudes con resultados en 48 horas que te ayuda a descubrir qué camino se ajusta mejor a ti — con bases reales, no corazonadas."
+    },
+    {
+        id: 13,
+        category: "olimpiadas",
+        title: "Olimpiadas de Matemáticas",
+        modality: "PARA MENTES QUE QUIEREN MÁS QUE EL COLEGIO",
+        description: "El colegio se queda corto para quienes de verdad disfrutan la matemática. Entrenamos el pensamiento y las técnicas de resolución de problemas que exigen las olimpiadas, con un profesor que compite y conoce ese mundo desde adentro. Clases 100% online."
     }
 ];
 
 // FUNCIÓN PARA RENDERIZAR LAS TARJETAS
 function renderCourses(categoryToFilter = "examenes") {
     const container = document.getElementById("coursesContainer");
+    if (!container) return;
+
     container.innerHTML = ""; // Limpiar contenedor
 
     // Filtrar cursos por categoría
@@ -74,54 +125,34 @@ function renderCourses(categoryToFilter = "examenes") {
     });
 }
 
-// LÓGICA DE LAS PESTAÑAS (TABS)
+// INICIALIZACIÓN DE EVENTOS
 document.addEventListener("DOMContentLoaded", () => {
-    // Cargar la primera categoría por defecto
+    // 1. Cargar la categoría por defecto
     renderCourses("examenes");
 
-    // Evento para cambiar de categoría al hacer clic en una pestaña
-    const tabButtons = document.querySelectorAll("#programTabs button");
+    // 2. Control de clicks en los botones dentro del ul#programTabs
+    const tabButtons = document.querySelectorAll("#programTabs .nav-link");
     tabButtons.forEach(button => {
         button.addEventListener("click", (e) => {
-            // Remover clase active de todos los botones
             tabButtons.forEach(btn => btn.classList.remove("active"));
             
-            // Agregar clase active al botón presionado
-            e.target.classList.add("active");
+            // Usamos e.currentTarget para asegurarnos de seleccionar el button completo
+            const targetButton = e.currentTarget;
+            targetButton.classList.add("active");
 
-            // Obtener la categoría del atributo data-category y renderizar
-            const selectedCategory = e.target.getAttribute("data-category");
-            renderCourses(selectedCategory);
-        });
-    });
-});
-// LÓGICA PARA ENVIAR FORMULARIO A WHATSAPP (COMPLETO)
-document.addEventListener("DOMContentLoaded", () => {
-    // Renderizado inicial del catálogo
-    renderCourses("examenes");
-
-    // Eventos de pestañas...
-    const tabButtons = document.querySelectorAll("#programTabs button");
-    tabButtons.forEach(button => {
-        button.addEventListener("click", (e) => {
-            tabButtons.forEach(btn => btn.classList.remove("active"));
-            e.target.classList.add("active");
-            const selectedCategory = e.target.getAttribute("data-category");
+            const selectedCategory = targetButton.getAttribute("data-category");
             renderCourses(selectedCategory);
         });
     });
 
-    // CAPTURA DEL FORMULARIO DE WHATSAPP
+    // 3. Formulario de WhatsApp
     const whatsappForm = document.getElementById("whatsappForm");
-
     if (whatsappForm) {
         whatsappForm.addEventListener("submit", (e) => {
             e.preventDefault();
 
-            // Número oficial de Reach Academy (Formato internacional sin + ni espacios)
-            const phoneNumber = "584121369189"; 
+            const phoneNumber = "584121369189";
 
-            // Obtener valores de los campos
             const nombreSolicitante = document.getElementById("nombreContacto").value.trim();
             const rol = document.getElementById("rolContacto").value;
             const nombreEstudianteInput = document.getElementById("nombreEstudiante").value.trim();
@@ -130,10 +161,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const programa = document.getElementById("programaContacto").value;
             const mensajeAdicional = document.getElementById("mensajeContacto").value.trim();
 
-            // Si no llena el nombre del estudiante, asumimos que es el mismo solicitante
             const nombreEstudiante = nombreEstudianteInput !== "" ? nombreEstudianteInput : nombreSolicitante;
 
-            // Construir el mensaje formateado para WhatsApp
             let textMessage = `¡Hola Reach Academy! 👋\n\n`;
             textMessage += `Solicitud de Información / Prueba de Nivelación:\n`;
             textMessage += `• *Solicitante:* ${nombreSolicitante} (${rol})\n`;
@@ -146,13 +175,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 textMessage += `\n*Consulta adicional:* ${mensajeAdicional}`;
             }
 
-            // Codificar texto a URL
             const encodedMessage = encodeURIComponent(textMessage);
-
-            // Enlace directo usando la API oficial
             const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
 
-            // Abrir en nueva pestaña
             window.open(whatsappURL, "_blank");
         });
     }

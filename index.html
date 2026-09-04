@@ -46,32 +46,39 @@
         <div class="container position-relative z-1 my-auto py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <h1 class="hero-title mb-3">Helping you reach your goals</h1>
-                    <p class="hero-subtitle mb-4">Preparación académica e internacional para tu éxito</p>
-                    <div class="hero-search-bar p-3 p-md-4 rounded-3 shadow-lg">
-                        <form class="row g-3 align-items-center justify-content-center">
-                            <div class="col-12 col-md-4">
-                                <label class="form-label text-start w-100 mb-1 fw-semibold text-lightSmall">Soy</label>
-                                    <select id="selectPerfil" class="form-select custom-select">
-                                        <option value="Estudiante" selected>Estudiante</option>
-                                        <option value="Representante">Representante</option>
-                                    </select>
-                            </div>
-                            <div class="col-12 col-md-5">
-                                <label class="form-label text-start w-100 mb-1 fw-semibold text-lightSmall">y me interesa</label>
-                                    <select id="selectInteres" class="form-select custom-select">
-                                        <option value="Idiomas" selected>Idiomas</option>
-                                        <option value="Tutorías Bachillerato">Tutorías Bachillerato</option>
-                                        <option value="Preparación para Exámenes">Preparación para Exámenes</option>
-                                        <option value="Admisión Universitaria">Admisión Universitaria</option>
-                                    </select>
-                            </div>
-                            <div class="col-12 col-md-3 d-flex align-items-end">
-                                <button type="button" id="btnExplorar" class="btn btn-reach-orange w-100 py-2 mt-md-4">Explorar
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+                    <h1 class="hero-title mb-2">Helping you reach your goals</h1>
+<p class="hero-subtitle-script mb-4">Refuerzo escolar, idiomas y preparación internacional</p>
+                    <div class="hero-search-bar p-3 p-md-4 rounded-4 shadow-lg">
+    <form class="row g-3 align-items-center justify-content-center">
+        <!-- Parte 1: Texto + Select Perfil -->
+        <div class="col-12 col-lg-auto d-flex align-items-center justify-content-center gap-2">
+            <span class="hero-sentence-text">Soy</span>
+            <select id="selectPerfil" class="form-select custom-select-inline">
+                <option value="Estudiante" selected>Estudiante</option>
+                <option value="Representante">Representante</option>
+            </select>
+        </div>
+
+        <!-- Parte 2: Texto + Select Interés -->
+        <div class="col-12 col-lg-auto d-flex align-items-center justify-content-center gap-2">
+            <span class="hero-sentence-text">y me interesa</span>
+            <select id="selectInteres" class="form-select custom-select-inline">
+                <option value="Idiomas" selected>Idiomas</option>
+                <option value="Refuerzo Escolar">Refuerzo Escolar</option>
+                <option value="Preparación para Exámenes">Preparación para Exámenes</option>
+                <option value="Admisión Universitaria">Admisión Universitaria</option>
+                <option value="Olimpiadas de Matemáticas">Olimpiadas de Matemáticas</option>
+            </select>
+        </div>
+
+        <!-- Parte 3: Botón de Acción -->
+        <div class="col-12 col-lg-auto text-center">
+            <button type="button" id="btnExplorar" class="btn btn-reach-orange px-4 py-2">
+                Explorar
+            </button>
+        </div>
+    </form>
+</div>
                 </div>
             </div>
         </div>
@@ -86,37 +93,22 @@
             <p class="section-subtitle text-muted">Selecciona una categoría para explorar nuestra oferta académica personalizada.</p>
         </div>
 
-        <!-- BARRA DE PESTAÑAS (TABS ESTILO PRINCETON REVIEW) -->
+        <!-- BARRA DE PESTAÑAS -->
         <div class="d-flex justify-content-center mb-4">
-            <ul class="nav nav-pills custom-tabs" id="programTabs" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="tab-examenes" data-category="examenes" type="button">
-                        Exámenes Internacionales
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="tab-idiomas" data-category="idiomas" type="button">
-                        Idiomas
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="tab-stem" data-category="stem" type="button">
-                        STEM / Bachillerato
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="tab-admisiones" data-category="admisiones" type="button">
-                        Admisión USA
-                    </button>
-                </li>
-            </ul>
+            <div class="nav nav-pills custom-tabs" id="programTabs">
+                <button class="nav-link active" data-category="examenes">Exámenes</button>
+                <button class="nav-link" data-category="idiomas">Idiomas</button>
+                <button class="nav-link" data-category="stem">Apoyo Académico</button>
+                <button class="nav-link" data-category="admisiones">Admisiones</button>
+                <button class="nav-link" data-category="olimpiadas">Olimpiadas</button>
+            </div>
         </div>
         <!-- FIN BARRA DE PESTAÑAS -->
 
         <!-- CONTENEDOR DE TARJETAS (CARDS GRID) -->
-        <div class="row g-4 justify-content-center" id="coursesContainer">
-            <!-- Aquí JavaScript inyectará dinámicamente las tarjetas de cursos -->
-        </div>
+       <div class="row g-4" id="coursesContainer">
+    <!-- Aquí JavaScript insertará las tarjetas automáticamente -->
+</div>
 
     </div>
 </section>
@@ -171,17 +163,18 @@
     </div>
 
     <!-- Fila 3: Programa de Interés -->
-    <div class="mb-3">
-        <label for="programaContacto" class="form-label fw-bold">Programa de Interés</label>
-        <select class="form-select" id="programaContacto" required>
-            <option value="TOEFL iBT Prep">TOEFL iBT Prep</option>
-            <option value="Digital SAT Mastery">Digital SAT Mastery</option>
-            <option value="Duolingo English Test (DET)">Duolingo English Test (DET)</option>
-            <option value="Inglés Académico e Internacional">Inglés Académico e Internacional</option>
-            <option value="Tutorías STEM & Bachillerato">Tutorías STEM & Bachillerato</option>
-            <option value="Asesoría de Admisión Universitaria USA">Asesoría de Admisión Universitaria USA</option>
-        </select>
-    </div>
+<div class="mb-3">
+    <label for="programaContacto" class="form-label fw-bold">Programa de Interés</label>
+    <select class="form-select" id="programaContacto" required>
+        <option value="TOEFL iBT Prep">TOEFL iBT Prep</option>
+        <option value="Digital SAT Mastery">Digital SAT Mastery</option>
+        <option value="Duolingo English Test (DET)">Duolingo English Test (DET)</option>
+        <option value="Inglés Académico e Internacional">Inglés Académico e Internacional</option>
+        <option value="Tutorías STEM & Bachillerato">Tutorías STEM & Bachillerato</option>
+        <option value="Asesoría de Admisión Universitaria USA">Asesoría de Admisión Universitaria USA</option>
+        <option value="Olimpiadas de Matemáticas">Olimpiadas de Matemáticas</option>
+    </select>
+</div>
 
     <!-- Fila 4: Mensaje o Pregunta Adicional -->
     <div class="mb-4">

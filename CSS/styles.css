@@ -199,11 +199,23 @@ body {
     background-color: var(--reach-navy);
     color: #FFFFFF;
 }
-/* Ajuste de tamaño para los logos */
+/* Tamaño del logo en la barra de navegación */
 .nav-logo {
-    height: 40px; /* Ajusta este valor según la proporción de tu logo */
+    height: 65px; /* Sube la altura para que destaque bastante */
     width: auto;
     object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+/* Espaciado de la barra para acomodar un logo más grande */
+.custom-navbar {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    background-color: rgba(9, 47, 103, 0.85) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
 }
 
 .footer-logo {
@@ -220,4 +232,47 @@ footer .text-muted {
 
 footer p {
     color: #FFFFFF;
+}
+/* Estilo de la frase en una sola línea en la barra flotante */
+.hero-sentence-text {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+.custom-select-inline {
+    background-color: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    color: #092F67;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 8px 36px 8px 14px;
+    width: auto; /* Permite que el selector se adapte al contenido */
+}
+
+/* Slogan en 2 líneas estilo UVA */
+.hero-title {
+    font-family: var(--font-display); /* Cinzel */
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.hero-subtitle-script {
+    font-family: var(--font-accent); /* Lora */
+    font-style: italic; /* Cursiva elegante */
+    font-size: clamp(1.3rem, 2.8vw, 2.1rem);
+    color: #F8FAFC;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    font-weight: 400;
+}
+/* Espaciado responsivo para el botón Explorar en pantallas pequeñas */
+@media (max-width: 991px) {
+    .hero-search-bar .btn-reach-orange {
+        width: 100%;
+        margin-top: 10px;
+    }
 }
