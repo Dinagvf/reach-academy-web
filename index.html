@@ -7,6 +7,8 @@
     
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
     <!-- Google Fonts: Cinzel, Inter, Lora -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -106,7 +108,7 @@
         <!-- FIN BARRA DE PESTAÑAS -->
 
         <!-- CONTENEDOR DE TARJETAS (CARDS GRID) -->
-       <div class="row g-4" id="coursesContainer">
+       <div class="row g-4 justify-content-center" id="coursesContainer">
     <!-- Aquí JavaScript insertará las tarjetas automáticamente -->
 </div>
 
@@ -193,14 +195,64 @@
 </section>
 <!-- SECCIÓN CONTACTO FIN -->
  <!-- FOOTER INICIO -->
-<footer class="py-4 text-white text-center" style="background-color: #041838; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+<footer class="site-footer text-white py-5">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6 text-md-start mb-3 mb-md-0">
-                <img src="img/logo-blanco.png" alt="Reach Academy Logo Blanco" class="footer-logo mb-2">
-                <p class="small text-muted mb-0">Barquisimeto, Venezuela — Preparación Académica e Internacional.</p>
+        <div class="row g-4 justify-content-between">
+            
+            <!-- Columna 1: Identidad -->
+            <div class="col-12 col-md-4">
+                <img src="img/logo-blanco.png" alt="Reach Academy Logo Blanco" class="footer-logo mb-3">
+                <p class="footer-tagline fw-bold mb-2">¡Te ayudamos a alcanzar tus metas!</p>
+                <p class="footer-text text-muted mb-0">
+                    Preparación académica e internacional en Barquisimeto, presencial u online.
+                </p>
             </div>
-            <div class="col-md-6 text-md-end">
+
+            <!-- Columna 2: Navegación -->
+            <div class="col-12 col-md-3">
+                <h5 class="footer-heading mb-3">Navegación</h5>
+                <ul class="list-unstyled footer-links mb-0">
+                    <li class="mb-2"><a href="#inicio">Inicio</a></li>
+                    <li class="mb-2"><a href="#programas">Programas</a></li>
+                    <li class="mb-2"><a href="#contacto">Contacto</a></li>
+                    <li class="mb-2"><a href="#contacto" class="text-orange-link">Prueba de Nivelación</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Contacto Directo -->
+            <div class="col-12 col-md-4">
+                <h5 class="footer-heading mb-3">Contacto</h5>
+                <ul class="list-unstyled footer-contact mb-0">
+                    <li class="mb-3">
+                        <a href="https://api.whatsapp.com/send?phone=584121369189" target="_blank" class="d-inline-flex align-items-center text-decoration-none">
+                            <i class="bi bi-whatsapp me-2 fs-5 text-success"></i>
+                            <span>+58 412-1369189</span>
+                        </a>
+                    </li>
+                    <li class="mb-3">
+                        <a href="https://www.instagram.com/reachacademyve" target="_blank" class="d-inline-flex align-items-center text-decoration-none">
+                            <i class="bi bi-instagram me-2 fs-5 text-danger-custom"></i>
+                            <span>@reachacademyve</span>
+                        </a>
+                    </li>
+                    <li class="mb-2 d-flex align-items-start">
+                        <i class="bi bi-geo-alt me-2 fs-5 text-warning-custom"></i>
+                        <span>Barquisimeto, Venezuela</span>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <i class="bi bi-clock me-2 fs-5 text-info-custom"></i>
+                        <span>Lunes a Viernes: 8:00 AM - 5:00 PM</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Línea divisoria y Bottom Bar -->
+        <hr class="footer-divider my-4">
+
+        <div class="row align-items-center">
+            <div class="col-12 text-center">
                 <p class="small text-muted mb-0">&copy; 2026 Reach Academy. Todos los derechos reservados.</p>
             </div>
         </div>

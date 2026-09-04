@@ -276,3 +276,81 @@ footer p {
         margin-top: 10px;
     }
 }
+/* ESTILOS DE FOOTER MULTICOLUMNA */
+.site-footer {
+    background-color: #041838;
+}
+
+.footer-heading {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+}
+
+.footer-tagline {
+    color: #FFFFFF;
+    font-size: 1rem;
+}
+
+.footer-text {
+    color: #CBD5E1 !important;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Enlaces de Navegación */
+.footer-links a {
+    color: #CBD5E1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+.footer-links a.text-orange-link {
+    color: var(--reach-orange);
+    font-weight: 600;
+}
+
+.footer-links a.text-orange-link:hover {
+    color: #FF9D42;
+}
+
+/* Enlaces e íconos de contacto */
+.footer-contact a {
+    color: #CBD5E1;
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-contact a:hover {
+    color: #FFFFFF;
+}
+
+.footer-contact span {
+    color: #CBD5E1;
+    font-size: 0.95rem;
+}
+
+/* Colores personalizados para íconos */
+.text-danger-custom {
+    color: #E1306C; /* Tono oficial Instagram */
+}
+
+.text-warning-custom {
+    color: var(--reach-orange);
+}
+
+.text-info-custom {
+    color: #38BDF8;
+}
+
+/* Línea divisoria */
+.footer-divider {
+    border-color: rgba(255, 255, 255, 0.15);
+}

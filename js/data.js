@@ -98,6 +98,8 @@ function renderCourses(categoryToFilter = "examenes") {
     const container = document.getElementById("coursesContainer");
     if (!container) return;
 
+    // Aseguramos que siempre mantenga el centrado de filas en Bootstrap
+    container.className = "row g-4 justify-content-center";
     container.innerHTML = ""; // Limpiar contenedor
 
     // Filtrar cursos por categoría
@@ -124,7 +126,6 @@ function renderCourses(categoryToFilter = "examenes") {
         container.innerHTML += cardHTML;
     });
 }
-
 // INICIALIZACIÓN DE EVENTOS
 document.addEventListener("DOMContentLoaded", () => {
     // 1. Cargar la categoría por defecto
