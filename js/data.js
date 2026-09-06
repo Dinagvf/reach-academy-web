@@ -182,18 +182,16 @@ document.addEventListener("DOMContentLoaded", () => {
             const rolContacto = document.getElementById("rolContacto");
 
             if (selectPerfil && rolContacto) {
-                // Sincroniza el rol (Estudiante / Representante) en el formulario de abajo
                 rolContacto.value = selectPerfil.value;
+                actualizarRequisitosRol();
             }
 
             if (selectInteres) {
                 const interesSeleccionado = selectInteres.value;
                 const categoriaObjetivo = interestCategoryMap[interesSeleccionado] || "examenes";
 
-                // Renderiza los cursos de la categoría correspondiente
                 renderCourses(categoriaObjetivo);
 
-                // Activa visualmente la pestaña correcta
                 tabButtons.forEach(btn => {
                     if (btn.getAttribute("data-category") === categoriaObjetivo) {
                         btn.classList.add("active");
@@ -202,7 +200,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 });
 
-                // Desplazamiento suave hasta la sección de programas
                 const programasSection = document.getElementById("programas");
                 if (programasSection) {
                     programasSection.scrollIntoView({ behavior: "smooth" });
@@ -211,28 +208,62 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 4. Formulario de WhatsApp
+    // 4. CONTROL DE VALIDACIÓN CONDICIONAL Y REQUISITOS DEL ROL
+    const rolContacto = document.getElementById("rolContacto");
+    const inputEstudiante = document.getElementById("nombreEstudiante");
+    const asteriscoEstudiante = document.getElementById("asteriscoEstudiante");
+
+    function actualizarRequisitosRol() {
+        if (!rolContacto || !inputEstudiante) return;
+
+        if (rolContacto.value === "Representante") {
+            inputEstudiante.setAttribute("required", "required");
+            if (asteriscoEstudiante) asteriscoEstudiante.classList.remove("d-none");
+            inputEstudiante.placeholder = "Ej. Alejandro Velazco (Obligatorio)";
+        } else {
+            inputEstudiante.removeAttribute("required");
+            if (asteriscoEstudiante) asteriscoEstudiante.classList.add("d-none");
+            inputEstudiante.placeholder = "Opcional si eres el estudiante";
+        }
+    }
+
+    if (rolContacto) {
+        rolContacto.addEventListener("change", actualizarRequisitosRol);
+        actualizarRequisitosRol(); // Correr al inicio
+    }
+
+    // 5. FORMULARIO DE WHATSAPP CON VALIDACIÓN ESTRICTA
     const whatsappForm = document.getElementById("whatsappForm");
     if (whatsappForm) {
         whatsappForm.addEventListener("submit", (e) => {
             e.preventDefault();
 
-            const phoneNumber = "584121369189";
-
+            const rol = rolContacto.value;
             const nombreSolicitante = document.getElementById("nombreContacto").value.trim();
-            const rol = document.getElementById("rolContacto").value;
-            const nombreEstudianteInput = document.getElementById("nombreEstudiante").value.trim();
+            const nombreEstudianteInput = inputEstudiante.value.trim();
+
+            // Validación estricta en JS si es Representante
+            if (rol === "Representante" && nombreEstudianteInput === "") {
+                alert("Por favor, ingresa el nombre del estudiante.");
+                inputEstudiante.focus();
+                return;
+            }
+
+            const phoneNumber = "584121369189";
             const edad = document.getElementById("edadEstudiante").value.trim();
             const anoGraduacion = document.getElementById("anoBachillerato").value;
             const programa = document.getElementById("programaContacto").value;
             const mensajeAdicional = document.getElementById("mensajeContacto").value.trim();
 
-            const nombreEstudiante = nombreEstudianteInput !== "" ? nombreEstudianteInput : nombreSolicitante;
+            // Definir el nombre del estudiante según el rol
+            const nombreEstudianteFinal = (rol === "Estudiante" && nombreEstudianteInput === "") 
+                ? nombreSolicitante 
+                : nombreEstudianteInput;
 
             let textMessage = `¡Hola Reach Academy! 👋\n\n`;
             textMessage += `Solicitud de Información / Prueba de Nivelación:\n`;
             textMessage += `• *Solicitante:* ${nombreSolicitante} (${rol})\n`;
-            textMessage += `• *Estudiante:* ${nombreEstudiante}\n`;
+            textMessage += `• *Estudiante:* ${nombreEstudianteFinal}\n`;
             textMessage += `• *Edad:* ${edad} años\n`;
             textMessage += `• *Nivel escolar:* ${anoGraduacion}\n`;
             textMessage += `• *Programa de interés:* ${programa}\n`;

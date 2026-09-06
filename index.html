@@ -128,52 +128,61 @@
         <div class="row justify-content-center">
             <div class="col-lg-7">
                 <form id="whatsappForm" class="p-4 p-md-5 rounded-4 shadow-lg bg-white text-dark">
+   
     <!-- Fila 1: Nombre del Solicitante y Rol -->
-    <div class="row g-3 mb-3">
-        <div class="col-12 col-md-8">
-            <label for="nombreContacto" class="form-label fw-bold">Tu Nombre Completo</label>
-            <input type="text" class="form-control" id="nombreContacto" placeholder="Ej. Maria Velazco" required>
-        </div>
-        <div class="col-12 col-md-4">
-            <label for="rolContacto" class="form-label fw-bold">¿Eres el/la?</label>
-            <select class="form-select" id="rolContacto" required>
-                <option value="Estudiante" selected>Estudiante</option>
-                <option value="Representante">Representante</option>
-            </select>
-        </div>
+<div class="row g-3 mb-3">
+    <div class="col-12 col-md-8">
+        <label for="nombreContacto" class="form-label fw-bold">Tu Nombre Completo <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="nombreContacto" placeholder="Ej. María Velazco" required>
     </div>
-
-    <!-- Fila 2: Nombre del Estudiante (si aplica), Edad y Año de Bachillerato -->
-    <div class="row g-3 mb-3">
-        <div class="col-12 col-md-6">
-            <label for="nombreEstudiante" class="form-label fw-bold">Nombre del Estudiante</label>
-            <input type="text" class="form-control" id="nombreEstudiante" placeholder="Si eres el estudiante, escribe tu nombre de nuevo">
-        </div>
-        <div class="col-6 col-md-3">
-            <label for="edadEstudiante" class="form-label fw-bold">Edad</label>
-            <input type="number" class="form-control" id="edadEstudiante" placeholder="Ej. 16" min="10" max="99" required>
-        </div>
-        <div class="col-6 col-md-3">
-            <label for="anoBachillerato" class="form-label fw-bold">Año/Grado</label>
-            <select class="form-select" id="anoBachillerato" required>
-                <option value="4to Año">4to Año</option>
-                <option value="5to Año" selected>5to Año</option>
-                <option value="Graduado/a">Graduado/a</option>
-                <option value="Otro">Otro</option>
-            </select>
-        </div>
+    <div class="col-12 col-md-4">
+        <label for="rolContacto" class="form-label fw-bold">¿Eres el/la? <span class="text-danger">*</span></label>
+        <select class="form-select" id="rolContacto" required>
+            <option value="Estudiante" selected>Estudiante</option>
+            <option value="Representante">Representante</option>
+        </select>
     </div>
+</div>
 
-    <!-- Fila 3: Programa de Interés -->
+<!-- Fila 2: Nombre del Estudiante, Edad y Año/Grado (ÚNICA FILA) -->
+<div class="row g-3 mb-3">
+    <div class="col-12 col-md-6">
+        <label for="nombreEstudiante" class="form-label fw-bold" id="labelNombreEstudiante">
+            Nombre del Estudiante <span id="asteriscoEstudiante" class="text-danger d-none">*</span>
+        </label>
+        <input type="text" class="form-control" id="nombreEstudiante" placeholder="Opcional si eres el estudiante">
+    </div>
+    <div class="col-6 col-md-3">
+        <label for="edadEstudiante" class="form-label fw-bold">Edad <span class="text-danger">*</span></label>
+        <input type="number" class="form-control" id="edadEstudiante" placeholder="Ej. 16" min="10" max="99" required>
+    </div>
+    <div class="col-6 col-md-3">
+        <label for="anoBachillerato" class="form-label fw-bold">Año/Grado <span class="text-danger">*</span></label>
+        <select class="form-select" id="anoBachillerato" required>
+            <option value="4to Año">4to Año</option>
+            <option value="5to Año" selected>5to Año</option>
+            <option value="Graduado/a">Graduado/a</option>
+            <option value="Otro">Otro</option>
+        </select>
+    </div>
+</div>
+
+<!-- Fila 3: Programa de Interés -->
 <div class="mb-3">
     <label for="programaContacto" class="form-label fw-bold">Programa de Interés</label>
     <select class="form-select" id="programaContacto" required>
-        <option value="TOEFL iBT Prep">TOEFL iBT Prep</option>
-        <option value="Digital SAT Mastery">Digital SAT Mastery</option>
+        <option value="TOEFL iBT">TOEFL iBT</option>
+        <option value="Digital SAT">Digital SAT</option>
         <option value="Duolingo English Test (DET)">Duolingo English Test (DET)</option>
-        <option value="Inglés Académico e Internacional">Inglés Académico e Internacional</option>
-        <option value="Tutorías STEM & Bachillerato">Tutorías STEM & Bachillerato</option>
-        <option value="Asesoría de Admisión Universitaria USA">Asesoría de Admisión Universitaria USA</option>
+        <option value="Inglés General">Inglés General</option>
+        <option value="Inglés Académico">Inglés Académico</option>
+        <option value="Francés">Francés</option>
+        <option value="Materias de Bachillerato">Materias de Bachillerato</option>
+        <option value="Nivelación Internacional">Nivelación Internacional</option>
+        <option value="Introducción a Economía y Negocios">Introducción a Economía y Negocios</option>
+        <option value="Asesoría de Admisión Académica">Asesoría de Admisión Académica</option>
+        <option value="Asesoría de Admisión Deportiva">Asesoría de Admisión Deportiva</option>
+        <option value="Test Vocacional (con TES)">Test Vocacional (con TES)</option>
         <option value="Olimpiadas de Matemáticas">Olimpiadas de Matemáticas</option>
     </select>
 </div>
