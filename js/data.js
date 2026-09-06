@@ -40,13 +40,13 @@ const coursesData = [
         category: "idiomas",
         title: "Francés",
         modality: "PARA TUS PLANES EN EUROPA",
-        description: "¿Piensas estudiar, trabajar o mudarte a Europa? Estamos forming grupos de francés desde nivel principiante. Escríbenos y te avisamos apenas abra el próximo."
+        description: "¿Piensas estudiar, trabajar o mudarte a Europa? Estamos formando grupos de francés desde nivel principiante. Escríbenos y te avisamos apenas abra el próximo."
     },
     {
         id: 7,
         category: "stem",
         title: "Materias de Bachillerato",
-        modality: "PARA IR AL DÍA Y MEJORAR TU NOTAS",
+        modality: "PARA IR AL DÍA Y MEJORAR TUS NOTAS",
         description: "Matemática, física, química e inglés, al ritmo de tu colegio. ¿Tienes un examen o una entrega cerca? Pausamos el plan y te ayudamos a prepararla — porque no basta con entender la materia, hay que irte bien en clase."
     },
     {
@@ -93,12 +93,20 @@ const coursesData = [
     }
 ];
 
+// Mapeo entre las opciones de la barra del Hero y las categorías/pestañas de los programas
+const interestCategoryMap = {
+    "Idiomas": "idiomas",
+    "Refuerzo Escolar": "stem",
+    "Preparación para Exámenes": "examenes",
+    "Admisión Universitaria": "admisiones",
+    "Olimpiadas de Matemáticas": "olimpiadas"
+};
+
 // FUNCIÓN PARA RENDERIZAR LAS TARJETAS
 function renderCourses(categoryToFilter = "examenes") {
     const container = document.getElementById("coursesContainer");
     if (!container) return;
 
-    // Aseguramos que siempre mantenga el centrado de filas en Bootstrap
     container.className = "row g-4 justify-content-center";
     container.innerHTML = ""; // Limpiar contenedor
 
@@ -117,7 +125,7 @@ function renderCourses(categoryToFilter = "examenes") {
                             <p class="card-text text-secondary mb-4">${course.description}</p>
                         </div>
                         <div>
-                            <a href="#contacto" class="btn btn-outline-reach w-100 py-2">Más Información</a>
+                            <a href="#contacto" class="btn btn-outline-reach w-100 py-2 btn-select-course" data-course-title="${course.title}">Más Información</a>
                         </div>
                     </div>
                 </div>
@@ -125,19 +133,38 @@ function renderCourses(categoryToFilter = "examenes") {
         `;
         container.innerHTML += cardHTML;
     });
+
+    // Asignar el evento a los nuevos botones de las tarjetas renderizadas
+    attachCourseSelectionEvents();
 }
+
+// FUNCIÓN PARA SELECCIONAR EL CURSO EN EL FORMULARIO AUTOMÁTICAMENTE
+function attachCourseSelectionEvents() {
+    const courseButtons = document.querySelectorAll(".btn-select-course");
+    const programaSelect = document.getElementById("programaContacto");
+
+    courseButtons.forEach(button => {
+        button.addEventListener("click", (e) => {
+            const courseTitle = e.currentTarget.getAttribute("data-course-title");
+            
+            if (programaSelect && courseTitle) {
+                programaSelect.value = courseTitle;
+            }
+        });
+    });
+}
+
 // INICIALIZACIÓN DE EVENTOS
 document.addEventListener("DOMContentLoaded", () => {
     // 1. Cargar la categoría por defecto
     renderCourses("examenes");
 
-    // 2. Control de clicks en los botones dentro del ul#programTabs
+    // 2. Control de clics en las pestañas de categorías
     const tabButtons = document.querySelectorAll("#programTabs .nav-link");
     tabButtons.forEach(button => {
         button.addEventListener("click", (e) => {
             tabButtons.forEach(btn => btn.classList.remove("active"));
             
-            // Usamos e.currentTarget para asegurarnos de seleccionar el button completo
             const targetButton = e.currentTarget;
             targetButton.classList.add("active");
 
@@ -146,7 +173,45 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // 3. Formulario de WhatsApp
+    // 3. LÓGICA DEL BOTÓN "EXPLORAR" DEL HERO
+    const btnExplorar = document.getElementById("btnExplorar");
+    if (btnExplorar) {
+        btnExplorar.addEventListener("click", () => {
+            const selectPerfil = document.getElementById("selectPerfil");
+            const selectInteres = document.getElementById("selectInteres");
+            const rolContacto = document.getElementById("rolContacto");
+
+            if (selectPerfil && rolContacto) {
+                // Sincroniza el rol (Estudiante / Representante) en el formulario de abajo
+                rolContacto.value = selectPerfil.value;
+            }
+
+            if (selectInteres) {
+                const interesSeleccionado = selectInteres.value;
+                const categoriaObjetivo = interestCategoryMap[interesSeleccionado] || "examenes";
+
+                // Renderiza los cursos de la categoría correspondiente
+                renderCourses(categoriaObjetivo);
+
+                // Activa visualmente la pestaña correcta
+                tabButtons.forEach(btn => {
+                    if (btn.getAttribute("data-category") === categoriaObjetivo) {
+                        btn.classList.add("active");
+                    } else {
+                        btn.classList.remove("active");
+                    }
+                });
+
+                // Desplazamiento suave hasta la sección de programas
+                const programasSection = document.getElementById("programas");
+                if (programasSection) {
+                    programasSection.scrollIntoView({ behavior: "smooth" });
+                }
+            }
+        });
+    }
+
+    // 4. Formulario de WhatsApp
     const whatsappForm = document.getElementById("whatsappForm");
     if (whatsappForm) {
         whatsappForm.addEventListener("submit", (e) => {
