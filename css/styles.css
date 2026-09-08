@@ -354,3 +354,8 @@ footer p {
 .footer-divider {
     border-color: rgba(255, 255, 255, 0.15);
 }
+
+/* COMPENSACIÓN DE SCROLL PARA LA BARRA FIJA */
+section, header {
+    scroll-margin-top: 45px; /* <--- JUEGA CON ESTE NÚMERO */
+}
