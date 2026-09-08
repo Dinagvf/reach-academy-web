@@ -293,9 +293,31 @@ document.addEventListener("DOMContentLoaded", async () => {
             const bs = document.getElementById("precioBS").innerText;
             const usd = document.getElementById("precioUSD").innerText;
 
+            let detallePlan = "";
+
+            // Caso especial: Test Vocacional
+            if (cursoSeleccionadoObj && cursoSeleccionadoObj.tarifaCategoria === "vocacional") {
+                detallePlan = "• *Modalidad:* Evaluación Vocacional Especial (Precio único)\n";
+            } else {
+                const selectModalidad = document.getElementById("selectModalidad");
+                const selectDuracion = document.getElementById("selectDuracion");
+                const selectHorasSemanales = document.getElementById("selectHorasSemanales");
+
+                const modalidadTexto = selectModalidad.options[selectModalidad.selectedIndex].text;
+                const duracionTexto = selectDuracion.options[selectDuracion.selectedIndex].text;
+                
+                if (selectModalidad.value === "Puntual") {
+                    detallePlan = `• *Modalidad:* Clase Puntual de ${duracionTexto}\n`;
+                } else {
+                    const frecuenciaTexto = selectHorasSemanales.options[selectHorasSemanales.selectedIndex].text;
+                    detallePlan = `• *Modalidad:* ${modalidadTexto}\n• *Frecuencia:* ${frecuenciaTexto} (${duracionTexto}/sesión)\n`;
+                }
+            }
+
             let msg = `¡Hola Reach Academy! 👋\n\n`;
             msg += `Quisiera consultar información y disponibilidad para el programa *${curso}*.\n`;
-            msg += `• *Estimado Modal:* ${eur} (${bs}) / ${usd}\n\n`;
+            msg += detallePlan;
+            msg += `• *Inversión estimada:* ${eur} (${bs}) / ${usd}\n\n`;
             msg += `¿Podrían indicarme los horarios disponibles?`;
 
             window.open(`https://api.whatsapp.com/send?phone=584121369189&text=${encodeURIComponent(msg)}`, "_blank");
