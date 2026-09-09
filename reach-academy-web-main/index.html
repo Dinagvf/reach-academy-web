@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reach Academy | Centro de Excelencia Académica</title>
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Google Fonts: Cinzel, Inter, Lora -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&family=Lora:ital@1&display=swap" rel="stylesheet">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- BARRA DE INICIO -->
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo-blanco.png" alt="Reach Academy Logo Blanco" class="nav-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#programas">Programas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-reach-orange" href="#contacto">Prueba de Nivelación</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- BARRA DE INICIO FIN -->
+
+    <header id="inicio" class="hero-section d-flex align-items-center justify-content-center text-center text-white">
+        <div class="hero-overlay"></div>
+        <div class="container position-relative z-1 my-auto py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h1 class="hero-title mb-2">Helping you reach your goals</h1>
+                    <p class="hero-subtitle-script mb-4">Refuerzo escolar, idiomas y preparación internacional</p>
+                    <div class="hero-search-bar p-3 p-md-4 rounded-4 shadow-lg">
+                        <form class="row g-3 align-items-center justify-content-center">
+                            <!-- Parte 1: Texto + Select Perfil -->
+                            <div class="col-12 col-lg-auto d-flex align-items-center justify-content-center gap-2">
+                                <span class="hero-sentence-text">Soy</span>
+                                <select id="selectPerfil" class="form-select custom-select-inline">
+                                    <option value="Estudiante" selected>Estudiante</option>
+                                    <option value="Representante">Representante</option>
+                                </select>
+                            </div>
+
+                            <!-- Parte 2: Texto + Select Interés -->
+                            <div class="col-12 col-lg-auto d-flex align-items-center justify-content-center gap-2">
+                                <span class="hero-sentence-text">y me interesa</span>
+                                <select id="selectInteres" class="form-select custom-select-inline">
+                                    <option value="Idiomas" selected>Idiomas</option>
+                                    <option value="Refuerzo Escolar">Refuerzo Escolar</option>
+                                    <option value="Preparación para Exámenes">Preparación para Exámenes</option>
+                                    <option value="Admisión Universitaria">Admisión Universitaria</option>
+                                    <option value="Olimpiadas de Matemáticas">Olimpiadas de Matemáticas</option>
+                                </select>
+                            </div>
+
+                            <!-- Parte 3: Botón de Acción -->
+                            <div class="col-12 col-lg-auto text-center">
+                                <button type="button" id="btnExplorar" class="btn btn-reach-orange px-4 py-2">
+                                    Explorar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN PROGRAMAS Y CURSOS INICIO -->
+    <section id="programas" class="py-5 bg-light">
+        <div class="container py-4">
+            
+            <!-- Encabezado de la Sección -->
+            <div class="text-center mb-5">
+                <h2 class="section-title">Nuestros Programas de Excelencia</h2>
+                <p class="section-subtitle text-muted">Selecciona una categoría para explorar nuestra oferta académica personalizada.</p>
+            </div>
+
+            <!-- BARRA DE PESTAÑAS -->
+            <div class="d-flex justify-content-center mb-4">
+                <div class="nav nav-pills custom-tabs" id="programTabs">
+                    <button class="nav-link active" data-category="examenes">Exámenes</button>
+                    <button class="nav-link" data-category="idiomas">Idiomas</button>
+                    <button class="nav-link" data-category="stem">Apoyo Académico</button>
+                    <button class="nav-link" data-category="admisiones">Admisiones</button>
+                    <button class="nav-link" data-category="olimpiadas">Olimpiadas</button>
+                </div>
+            </div>
+            <!-- FIN BARRA DE PESTAÑAS -->
+
+            <!-- CONTENEDOR DE TARJETAS (CARDS GRID) -->
+            <div class="row g-4 justify-content-center" id="coursesContainer">
+                <!-- Aquí JavaScript insertará las tarjetas automáticamente -->
+            </div>
+
+        </div>
+    </section>
+    <!-- SECCIÓN PROGRAMAS Y CURSOS FIN -->
+
+    <!-- SECCIÓN CONTACTO / PRE-INSCRIPCIÓN INICIO -->
+    <section id="contacto" class="py-5 text-white" style="background-color: var(--reach-navy);">
+        <div class="container py-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-4">
+                    <h2 class="section-title text-white">Solicita tu Prueba de Nivelación</h2>
+                    <p class="lead opacity-75">Déjanos tus datos y te contactaremos por WhatsApp con todos los detalles de la oferta académica.</p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <form id="whatsappForm" class="p-4 p-md-5 rounded-4 shadow-lg bg-white text-dark">
+                        <!-- Fila 1: Nombre del Solicitante y Rol -->
+                        <div class="row g-3 mb-3">
+                            <div class="col-12 col-md-8">
+                                <label for="nombreContacto" class="form-label fw-bold">Tu Nombre Completo <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="nombreContacto" placeholder="Ej. María Velazco" required>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label for="rolContacto" class="form-label fw-bold">¿Eres el/la? <span class="text-danger">*</span></label>
+                                <select class="form-select" id="rolContacto" required>
+                                    <option value="Estudiante" selected>Estudiante</option>
+                                    <option value="Representante">Representante</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Fila 2: Nombre del Estudiante, Edad y Año/Grado -->
+                        <div class="row g-3 mb-3">
+                            <div class="col-12 col-md-6">
+                                <label for="nombreEstudiante" class="form-label fw-bold" id="labelNombreEstudiante">
+                                    Nombre del Estudiante <span id="asteriscoEstudiante" class="text-danger d-none">*</span>
+                                </label>
+                                <input type="text" class="form-control" id="nombreEstudiante" placeholder="Opcional si eres el estudiante">
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <label for="edadEstudiante" class="form-label fw-bold">Edad <span class="text-danger">*</span></label>
+                                <input type="number" class="form-control" id="edadEstudiante" placeholder="Ej. 16" min="10" max="99" required>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <label for="anoBachillerato" class="form-label fw-bold">Año/Grado <span class="text-danger">*</span></label>
+                                <select class="form-select" id="anoBachillerato" required>
+                                    <option value="4to Año">4to Año</option>
+                                    <option value="5to Año" selected>5to Año</option>
+                                    <option value="Graduado/a">Graduado/a</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Fila 3: Programa de Interés -->
+                        <div class="mb-3">
+                            <label for="programaContacto" class="form-label fw-bold">Programa de Interés</label>
+                            <select class="form-select" id="programaContacto" required>
+                                <option value="TOEFL iBT">TOEFL iBT</option>
+                                <option value="Digital SAT">Digital SAT</option>
+                                <option value="Duolingo English Test (DET)">Duolingo English Test (DET)</option>
+                                <option value="Inglés General">Inglés General</option>
+                                <option value="Inglés Académico">Inglés Académico</option>
+                                <option value="Francés">Francés</option>
+                                <option value="Materias de Bachillerato">Materias de Bachillerato</option>
+                                <option value="Nivelación Internacional">Nivelación Internacional</option>
+                                <option value="Introducción a Economía y Negocios">Introducción a Economía y Negocios</option>
+                                <option value="Asesoría de Admisión Académica">Asesoría de Admisión Académica</option>
+                                <option value="Asesoría de Admisión Deportiva">Asesoría de Admisión Deportiva</option>
+                                <option value="Test Vocacional (con TES)">Test Vocacional (con TES)</option>
+                                <option value="Olimpiadas de Matemáticas">Olimpiadas de Matemáticas</option>
+                            </select>
+                        </div>
+
+                        <!-- Fila 4: Mensaje o Pregunta Adicional -->
+                        <div class="mb-4">
+                            <label for="mensajeContacto" class="form-label fw-bold">¿Tienes alguna duda o consulta específica?</label>
+                            <textarea class="form-control" id="mensajeContacto" rows="3" placeholder="Ej. Me gustaría saber los horarios disponibles para las clases en vivo..."></textarea>
+                        </div>
+
+                        <!-- Botón de Envío -->
+                        <button type="submit" class="btn btn-success w-100 py-3 fw-bold fs-5 shadow-sm">
+                            Solicitar Información por WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SECCIÓN CONTACTO FIN -->
+
+    <!-- FOOTER INICIO -->
+    <footer class="site-footer text-white py-5">
+        <div class="container">
+            <div class="row g-4 justify-content-between">
+                
+                <!-- Columna 1: Identidad -->
+                <div class="col-12 col-md-4">
+                    <img src="img/logo-blanco.png" alt="Reach Academy Logo Blanco" class="footer-logo mb-3">
+                    <p class="footer-tagline fw-bold mb-2">¡Te ayudamos a alcanzar tus metas!</p>
+                    <p class="footer-text text-muted mb-0">
+                        Preparación académica e internacional en Barquisimeto, presencial u online.
+                    </p>
+                </div>
+
+                <!-- Columna 2: Navegación -->
+                <div class="col-12 col-md-3">
+                    <h5 class="footer-heading mb-3">Navegación</h5>
+                    <ul class="list-unstyled footer-links mb-0">
+                        <li class="mb-2"><a href="#inicio">Inicio</a></li>
+                        <li class="mb-2"><a href="#programas">Programas</a></li>
+                        <li class="mb-2"><a href="#contacto">Contacto</a></li>
+                        <li class="mb-2"><a href="#contacto" class="text-orange-link">Prueba de Nivelación</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Contacto Directo -->
+                <div class="col-12 col-md-4">
+                    <h5 class="footer-heading mb-3">Contacto</h5>
+                    <ul class="list-unstyled footer-contact mb-0">
+                        <li class="mb-3">
+                            <a href="https://api.whatsapp.com/send?phone=584121369189" target="_blank" class="d-inline-flex align-items-center text-decoration-none">
+                                <i class="bi bi-whatsapp me-2 fs-5 text-success"></i>
+                                <span>+58 412-1369189</span>
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="https://www.instagram.com/reachacademyve" target="_blank" class="d-inline-flex align-items-center text-decoration-none">
+                                <i class="bi bi-instagram me-2 fs-5 text-danger-custom"></i>
+                                <span>@reachacademyve</span>
+                            </a>
+                        </li>
+                        <li class="mb-2 d-flex align-items-start">
+                            <i class="bi bi-geo-alt me-2 fs-5 text-warning-custom"></i>
+                            <span>Barquisimeto, Venezuela</span>
+                        </li>
+                        <li class="d-flex align-items-center">
+                            <i class="bi bi-clock me-2 fs-5 text-info-custom"></i>
+                            <span>Lunes a Viernes: 8:00 AM - 5:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Línea divisoria y Bottom Bar -->
+            <hr class="footer-divider my-4">
+
+            <div class="row align-items-center">
+                <div class="col-12 text-center">
+                    <p class="small text-muted mb-0">&copy; 2026 Reach Academy. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER FIN -->
+
+    <!-- MODAL CALCULADORA DE PRECIOS -->
+    <div class="modal fade" id="modalPrecios" tabindex="-1" aria-labelledby="modalPreciosLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg rounded-4">
+                <div class="modal-header text-white" style="background-color: var(--reach-navy);">
+                    <h5 class="modal-title fw-bold" id="modalPreciosLabel">
+                        <i class="bi bi-calculator me-2"></i>Calculadora de Inversión
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <h4 id="modalCursoTitulo" class="fw-bold mb-1" style="color: var(--reach-navy);">Programa</h4>
+                    <p class="text-muted small mb-4">Ajusta las opciones para consultar la tarifa según tu disponibilidad e intensidad.</p>
+
+                    <!-- Vista para Cursos Tradicionales (Escolar / Universitario) -->
+                    <div id="vistaClasesRegulares">
+                        <div class="row g-3 mb-3">
+                            <div class="col-12 col-md-6">
+                                <label for="selectModalidad" class="form-label fw-bold">Modalidad de Clase:</label>
+                                <select id="selectModalidad" class="form-select">
+                                    <option value="Mensual" selected>Plan Mensual (Recurrente)</option>
+                                    <option value="Puntual">Clase Puntual / Refuerzo</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="selectDuracion" class="form-label fw-bold">Duración de la Sesión:</label>
+                                <select id="selectDuracion" class="form-select">
+                                    <option value="45">45 Minutos</option>
+                                    <option value="60" selected>60 Minutos (1 Hora)</option>
+                                    <option value="90">90 Minutos (1.5 Horas)</option>
+                                    <option value="120">120 Minutos (2 Horas)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-4" id="contenedorHorasSemanales">
+                            <div class="col-12">
+                                <label for="selectHorasSemanales" class="form-label fw-bold">Frecuencia Semanal (Mes de 4 semanas):</label>
+                                <select id="selectHorasSemanales" class="form-select">
+                                    <option value="1" selected>1 hora / semana (4 clases al mes)</option>
+                                    <option value="2">2 horas / semana (8 clases al mes)</option>
+                                    <option value="3">3 horas / semana (12 clases al mes)</option>
+                                    <option value="4">4 horas / semana (16 clases al mes)</option>
+                                    <option value="5">5 horas / semana (20 clases al mes)</option>
+                                    <option value="6">6 horas / semana (24 clases al mes)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta de Desglose Monetario -->
+                    <div class="p-4 rounded-4 bg-light border text-center my-3">
+                        <div class="row g-3 align-items-center">
+                            <div class="col-12 col-md-4 border-end-md">
+                                <span class="d-block text-uppercase small text-muted fw-bold">Referencia EUR (BCV)</span>
+                                <span id="precioEUR" class="fs-3 fw-bold text-dark">€0</span>
+                            </div>
+                            <div class="col-12 col-md-4 border-end-md">
+                                <span class="d-block text-uppercase small text-muted fw-bold">Inversión Estimada en Bs.</span>
+                                <span id="precioBS" class="fs-3 fw-bold text-primary">Bs. 0,00</span>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <span class="d-block text-uppercase small text-muted fw-bold">Inversión en USD (Divisas)</span>
+                                <span id="precioUSD" class="fs-3 fw-bold text-success">$0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info py-2 px-3 small mb-0 d-flex align-items-center" role="alert">
+                        <i class="bi bi-info-circle me-2 fs-5"></i>
+                        <span>Precios de referencia en € convertidos en Bolívares a la tasa oficial del BCV del día.</span>
+                    </div>
+                </div>
+                <div class="modal-footer bg-light border-0 justify-content-between p-3">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" id="btnCotizarWhatsApp" class="btn btn-success px-4 fw-bold">
+                        <i class="bi bi-whatsapp me-1"></i> Consultar Inscripción
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/data.js"></script>
+</body>
+</html>

@@ -351,7 +351,11 @@ document.addEventListener("DOMContentLoaded", async () => {
                     }
                 });
 
-                document.getElementById("programas")?.scrollIntoView({ behavior: "smooth" });
+                // Scroll suave respetando el scroll-margin-top
+                const seccionProgramas = document.getElementById("programas");
+                if (seccionProgramas) {
+                    seccionProgramas.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
             }
         });
     }
