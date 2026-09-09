@@ -359,3 +359,28 @@ footer p {
 section, header {
     scroll-margin-top: 45px; /* <--- JUEGA CON ESTE NÚMERO */
 }
+/* AJUSTES EXCLUSIVOS PARA PANTALLAS PEQUEÑAS (MÓVILES / TABLETS) */
+@media (max-width: 991px) {
+    .hero-sentence-text {
+        white-space: normal; /* Permite que el texto se adapte sin salirse */
+        font-size: 0.95rem;
+    }
+
+    .custom-select-inline {
+        width: 100% !important; /* El desplegable aprovecha bien el espacio móvil */
+        max-width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .hero-search-bar .btn-reach-orange {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    /* Alineación limpia en vertical para cada bloque en móvil */
+    .hero-search-bar .col-12 {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 6px !important;
+    }
+}
